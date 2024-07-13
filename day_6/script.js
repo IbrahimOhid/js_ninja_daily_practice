@@ -27,3 +27,44 @@ console.log(secondArray[3]);
 const complexArray = [1, 'ohid', true, null, 'rahim', undefined, ['hosna', 'mobarak']]
 const lastValue = complexArray.length - 1;
 console.log(complexArray[lastValue][1]);
+
+                // Object
+const personalInfo = {
+    firstName : 'mohammad',
+    lastName : 'ibrahim',
+    age : 26,
+    profession : 'web engineer'
+}
+personalInfo.isDeveloper = "ture";
+console.log(personalInfo);
+console.log(personalInfo.age);
+console.log(personalInfo.isDeveloper);
+
+const myPersonalInfo = {
+    name : 'ibrahim',
+    age : 27,
+    hobbies : ['reading_book', 'web developer', 'software engineer'],
+    obj : {
+        key1 : 'value1',
+        key2 : 'value2'
+    }
+}
+
+console.log(myPersonalInfo.hobbies[2]);
+console.log(myPersonalInfo.obj.key2);
+
+
+const uniqueObj = {};
+uniqueObj.name = 'ibrahim',
+uniqueObj.profession = 'web engineer'
+console.log(uniqueObj);
+console.log(uniqueObj.profession);
+
+const newObj = new Object({name: 'ohid', age: 27, profession: 'web engineer'});
+console.log(newObj);
+console.log(newObj.age);
+
+const firstObj = new Object();
+firstObj.designation = 'web developer',
+firstObj.experience = '3 years'
+console.log(firstObj);
