@@ -1,9 +1,56 @@
+// let num = 1;
+// while(num <= 10){
+//     console.log(num);
+//     num += 2;
+// }
+
+// let num = 1
+
+// while(num <= 20) {
+// if(num % 4 === 0){
+// console.log(num);
+// }
+// num++;
+// }
+
+// let num = 100;
+// while(num < 150) {
+// console.log(num + 1);
+// num--;
+// }
+
+// let num = 1
+
+// while(num <= 100) {
+// if(num % 2 === 0){
+// console.log(num);
+// }
+// num++;
+// }
+
+// for(let i = 1; i <= 100; i++){
+//     if(i % 2 === 0){
+//         console.log(i);
+//     }
+// }
 
 
-function selectName(userName){
-    const name = ['ibrahim', 'ohid', 'rahim', 'karim', 'abul', 'kabul', 'makbul', 'babul'];
-    //console.log(name[userName -1]);
-    console.log(name[userName-1])
+
+let n = 3;
+for(let i = 1; i <= n; i++){
+    for(let j = 1; j <= 3; j++){
+        console.log(i, j);
+    }
+    console.log(i);
 }
-//selectName(4)
-selectName(6)
+
+function repeat(n){
+    for(let i = 1; i <= n; i++){
+        const value = ['$']
+        for(let j = 1; j <= i; j++){
+            console.log(i, j);
+        }
+        console.log(i);
+    }
+}
+repeat(3);
