@@ -1,3 +1,29 @@
+// string
+const str = 'IbrahiM OhiD';
+
+console.log(str.length);
+console.log(str.toLocaleLowerCase());
+console.log(str.toUpperCase());
+const user = 'bangladesh   ';
+console.log(user.indexOf('a'));
+console.log(user.lastIndexOf('a'));
+console.log(user.length);
+console.log(user.trim())
+console.log(user.includes('ba'));
+
+const text = 'hello world';
+console.log(text.slice(0, 5));
+console.log(text.slice(3, 8));
+console.log(text.slice(-5, -2));
+
+const userText = 'i am mohammad ibrahim';
+console.log(userText.split(' '));
+const para = 'mohammad';
+const para1 = ' ibrahim';
+console.log(para.concat(para1));
+console.log(para.charAt(3));
+console.log(para.charCodeAt(3))
+
 // array
 
 const arr = [2, 3, 4];
@@ -53,3 +79,17 @@ console.log(numb2.lastIndexOf(6));
 
 const arrs = [1, 2, 3, 4, 5];
 console.log(arrs.reverse());
+
+// object
+const profile = {
+    lastName :'ibrahim',
+    email : 'ohid@gmail.com',
+    age: 27
+}
+
+for(let pro in profile){
+    console.log(profile[pro])
+}
+
+const keyvalue = Object.keys(profile);
+console.log(keyvalue)
