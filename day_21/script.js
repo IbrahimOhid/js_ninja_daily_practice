@@ -23,3 +23,30 @@ function allUser(nameValue){
 console.log(allUser(userProfile));
 
 // first class function
+function calculate(num1, num2, action){
+  return  action(num1, num2)
+}
+console.log(calculate(5,2, sum));
+console.log(calculate(5,2, multiply));
+console.log(calculate(5,2, square));
+
+function sum(num1, num2){
+    return num1 + num2;
+}
+
+function multiply(num1, num2){
+    return num1 * num2;
+}
+
+function square(num1, num2){
+    return num1 ** num2
+}
+
+// function can be returned another function
+function printFullName(firstName){
+    return function PrintLastName(lastName){
+        return firstName + ' ' + lastName;
+    }
+}
+const fullName = printFullName('mohammad');
+console.log(fullName('ibrahim'));
