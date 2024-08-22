@@ -50,3 +50,68 @@ function printFullName(firstName){
 }
 const fullName = printFullName('mohammad');
 console.log(fullName('ibrahim'));
+console.log(printFullName('rafiya')('kawser'));
+
+// interview question
+// sum(3)(2)
+function addNum(num1){
+    return function (num2){
+        return num1 + num2
+    }
+    }
+    console.log(addNum(3)(2));
+
+// higher order function
+//callback function
+// lambda function
+
+
+//statement vs expression
+
+//statement(command)
+if(true){
+
+};
+
+switch(true){
+
+};
+
+const a = 5;
+
+function something(){
+
+}
+
+// expression(value)
+10
+'ibrahim'
+null
+undefined
+
+// expression can be written in right side of the variable
+
+
+// evolution of function
+
+// function statement
+function addition(num1, num2){
+    return num1 + num2;
+}
+console.log(addition(3, 2));
+
+// function expression
+const additions = function(num1, num2){
+    return num1 + num2;
+}
+console.log(additions(10, 2));
+
+// arrow function
+const fullUserName = (firstName, lastName) =>{
+    return firstName + ' ' + lastName;
+}
+console.log(fullUserName('mohammad', 'ibrahim'));
+
+// auto return arrow function
+const squares = num1 => num1 * num1;
+console.log(squares(5));
