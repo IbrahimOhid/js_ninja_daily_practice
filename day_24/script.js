@@ -116,45 +116,148 @@
 // console.log(totalPrice);
 
 // reduce example book list💛
-const bookList = [
-    {
-        author: 'ibrahim',
-        bookName: ['web design'],
-        year: [2018]
-    },
-    {
-        author: 'mohammad',
-        bookName: ['javascript'],
-        year: [2020]
-    },
-    {
-        author: 'ohid',
-        bookName: ['HTML'],
-        year: [2021]
-    },
-    {
-        author: 'mobarak',
-        bookName: ['CSS'],
-        year: [2024]
-    }
-]
+// const bookList = [
+//     {
+//         author: 'ibrahim',
+//         bookName: ['web design'],
+//         year: [2018]
+//     },
+//     {
+//         author: 'mohammad',
+//         bookName: ['javascript'],
+//         year: [2020]
+//     },
+//     {
+//         author: 'ohid',
+//         bookName: ['HTML'],
+//         year: [2021]
+//     },
+//     {
+//         author: 'mobarak',
+//         bookName: ['CSS'],
+//         year: [2024]
+//     }
+// ]
 
-const AllBookName = bookList.reduce((value, book)=>{
-    // return [...value, ...book.bookName]
-    return [...value, ...book.year]
+// const AllBookName = bookList.reduce((value, book)=>{
+//     // return [...value, ...book.bookName]
+//     return [...value, ...book.year]
     
-}, [])
-console.log(AllBookName);
+// }, [])
+// console.log(AllBookName);
 
 // reduce example name finding💛
-const userName = ['rahim', 'ohid', 'rahim', 'mohammad', 'ohid', 'hosne', 'rafiya', 'rifa', 'kawser', 'rifa'];
+// const userName = ['rahim', 'ohid', 'rahim', 'mohammad', 'ohid', 'hosne', 'rafiya', 'rifa', 'kawser', 'rifa'];
 
-const allUserName = userName.reduce((autoName, uniqueName)=>{
-    if(uniqueName in autoName){
-        autoName[uniqueName] = autoName[uniqueName] + 1
+// const allUserName = userName.reduce((autoName, uniqueName)=>{
+//     if(uniqueName in autoName){
+//         autoName[uniqueName] = autoName[uniqueName] + 1
+//     }else{
+//         autoName[uniqueName] = 1;
+//     }
+//     return autoName;
+// },{});
+// console.log(allUserName);
+
+// reduce example object key value matching 💛
+//find{
+//   '21': [ { name: 'rifa', age: 21 } ],
+//   '25': [ { name: 'ibrahim', age: 25 } ],
+//   '27': [ { name: 'mohammad', age: 27 }, { name: 'ohid', age: 27 } ]
+// }
+
+// const people = [
+//     {name:'mohammad', age: 27},
+//     {name: 'ibrahim', age: 25},
+//     {name: 'ohid', age: 27},
+//     {name: 'rifa', age: 21}
+// ]
+
+// const uniqueAge = people.reduce((acc, curr)=>{
+//     const newAge = curr.age;
+//     if(newAge in acc){
+//         acc[newAge].push(curr);
+//     }else{
+//         acc[newAge] = [curr]
+//     }
+//     return acc;
+// }, {})
+// console.log(uniqueAge);
+
+// 💛
+//find{
+//   '21': [ { name: 'rifa', age: 21 } ],
+//   '25': [ { name: 'ibrahim', age: 25 } ],
+//   '27': [ { name: 'mohammad', age: 27 }, { name: 'ohid', age: 27 } ]
+// }
+// const people = [
+//     {name:'mohammad', age: 27},
+//     {name: 'ibrahim', age: 25},
+//     {name: 'ohid', age: 27},
+//     {name: 'rifa', age: 21}
+// ]
+
+// function groupBy(obj, property){
+//     const newAge = obj.reduce((arr, curr)=>{
+//         const peopleAge = curr[property];
+//         if(peopleAge in arr){
+//             arr[peopleAge].push(curr)
+//         }
+//         else{
+//             arr[peopleAge] = [curr]
+//         }
+//         return arr;
+//     }, {});
+//     return newAge;
+// }
+// console.log(groupBy(people, 'age'));
+
+// REDUCE BEST PRACTICE 💛💛💛
+
+// implementing sum 💚
+
+// const numbers = [1, 2, 3, 4, 5];
+// const result = numbers.reduce((acc, cur)=>{
+//     console.log(`Acc - ${acc}, Cur ${cur}`);
+//     return acc + cur;
+// })
+// console.log(result);
+
+// const num = [1, 2, 3, 4, 5];
+// const sum = num.reduce((acc, cur)=>{
+//     console.log(`Acc- ${acc}, Curr- ${cur}`);
+//     return acc + cur;
+// },5)
+// console.log(sum);
+
+// Array flat method 💚
+// const nestedArray = [[1], 2, [3,4], [5,6,7], 8, 9, [10]];
+// console.log(nestedArray.flat());
+
+// reduce method 💚
+// const nestedArray1 = [[11,12, 13], 14, 15, [16], [17, 18], 19, [20]];
+// const array = nestedArray1.reduce((acc, cur)=>{
+//     return acc.concat(cur);
+// }, [])
+// console.log(array);
+
+// reduce number value method 💚
+
+// const num = [1,2,3,4,5];
+// const result = num.reduce((acc, cur)=>{
+//     return acc.concat(cur * 2)
+// }, [])
+// console.log(result);
+
+// frequency checker / vote checker 💚
+
+const vote = ['java', 'php', 'javascript', 'php', 'javascript', 'java'];
+const voteResult = vote.reduce((acc, cur)=>{
+    if(acc[cur]){
+        acc[cur]++
     }else{
-        autoName[uniqueName] = 1;
+        acc[cur] = 1;
     }
-    return autoName;
-},{});
-console.log(allUserName);
+    return acc;
+},{})
+console.log(voteResult);
