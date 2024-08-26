@@ -65,8 +65,54 @@
 // console.log(result);
 
 //every 💛
-const newArr = [2, 4, 6];
-const result = newArr.every(element => element % 2 === 0)
-console.log(result);
+// const newArr = [2, 4, 6];
+// const result = newArr.every(element => element % 2 === 0)
+// console.log(result);
+
+// reduce 💛
+// const numArr = [1, 2, 3, 4];
+
+// const result = numArr.reduce((num1, num2) => {
+//     console.log(num1, num2);
+//     return num1 + num2;
+// })
+// num1 = 1, num2 = 2, result = 3
+// num1 = 3 , num2 = 3, result = 6
+// num1 = 6, num2 = 4, result = 10
+// console.log(result);
+
+// const newArr = [1, 2, 3, 4];
+
+// const sum = newArr.reduce((num1, num2) => {
+//     console.log(num1, num2);
+//     return num1 + num2;
+// }, 5)
+// num1 = 5, num2 = 1, sum = 6;
+// num1 = 6, num2 = 2, sum = 8;
+// num1 = 8, num2 = 3, sum = 11;
+// num1 = 11, num2 = 4, sum = 15;
+
+// console.log(sum);
+
+// const productList = [
+//     {
+//         productName: 'T-Shirt',
+//         price: 300
+//     },
+//     {
+//         productName: 'Pant',
+//         price: 500
+//     },
+//     {
+//         productName: 'Shirt',
+//         price: 450
+//     }
+// ]
+
+// const totalPrice = productList.reduce((fixedValue, item)=>{
+//     return fixedValue + item.price;
+// }, 0)
+// console.log(totalPrice);
+
 
 
