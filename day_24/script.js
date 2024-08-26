@@ -94,6 +94,7 @@
 
 // console.log(sum);
 
+// reduce example shopping cart 💛
 // const productList = [
 //     {
 //         productName: 'T-Shirt',
@@ -114,5 +115,46 @@
 // }, 0)
 // console.log(totalPrice);
 
+// reduce example book list💛
+const bookList = [
+    {
+        author: 'ibrahim',
+        bookName: ['web design'],
+        year: [2018]
+    },
+    {
+        author: 'mohammad',
+        bookName: ['javascript'],
+        year: [2020]
+    },
+    {
+        author: 'ohid',
+        bookName: ['HTML'],
+        year: [2021]
+    },
+    {
+        author: 'mobarak',
+        bookName: ['CSS'],
+        year: [2024]
+    }
+]
 
+const AllBookName = bookList.reduce((value, book)=>{
+    // return [...value, ...book.bookName]
+    return [...value, ...book.year]
+    
+}, [])
+console.log(AllBookName);
 
+// reduce example name finding💛
+const userName = ['rahim', 'ohid', 'rahim', 'mohammad', 'ohid', 'hosne', 'rafiya', 'rifa', 'kawser', 'rifa'];
+
+const allUserName = userName.reduce((autoName, uniqueName)=>{
+    if(uniqueName in autoName){
+        autoName[uniqueName] = autoName[uniqueName] + 1
+    }else{
+        autoName[uniqueName] = 1;
+    }
+    return autoName;
+},{});
+console.log(allUserName);
