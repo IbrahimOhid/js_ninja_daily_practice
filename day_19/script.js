@@ -60,7 +60,7 @@ console.log(getCurrentTime());
 // }, 1000)
 
 // setInterval
-setInterval(()=>{
-    console.log(getCurrentTime());
-}, 1000)
+// setInterval(()=>{
+//     console.log(getCurrentTime());
+// }, 1000)
 

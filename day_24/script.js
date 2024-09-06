@@ -251,13 +251,38 @@
 
 // frequency checker / vote checker 💚
 
-const vote = ['java', 'php', 'javascript', 'php', 'javascript', 'java'];
-const voteResult = vote.reduce((acc, cur)=>{
-    if(acc[cur]){
-        acc[cur]++
-    }else{
-        acc[cur] = 1;
-    }
-    return acc;
-},{})
-console.log(voteResult);
+// const vote = ['java', 'php', 'javascript', 'php', 'javascript', 'java'];
+// const voteResult = vote.reduce((acc, cur)=>{
+//     if(acc[cur]){
+//         acc[cur]++
+//     }else{
+//         acc[cur] = 1;
+//     }
+//     return acc;
+// },{})
+// console.log(voteResult);
+
+// discount product 💚
+const  products = [
+    {name: 'T-shirt', price: 300},
+    {name: 'Pant', price: 400},
+    {name: 'shirt', price: 90},
+    {name: 'shoe', price: 80},
+    {name: 'pumaShoe', price: 800},
+]
+
+const filterProduct = products.filter(product => product.price >= 100);
+console.log(filterProduct)
+const discountProduct = filterProduct.map(product => {
+    product.price = product.price / 2;
+    return product;
+})
+console.log(discountProduct);
+
+// forEach multiply💚
+const numArr = [1, 3, 5, 8];
+const count = [];
+const result = numArr.forEach((elm)=>{
+  count.push(elm ** 2);
+})
+console.log(count)

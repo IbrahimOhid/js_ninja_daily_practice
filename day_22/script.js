@@ -22,15 +22,15 @@
 // console.log(firstUser);
 // console.log(anotherName);
 //using object
-// const userdetails = {
-//     firstName : 'Mohammad',
-//     lastName : 'ibrahim',
-//     age: 27,
-//     profession: 'web engineer'
-// }
-// const {lastName, profession, ...allUserInfo} = userdetails;
-// console.log(lastName, profession);
-// console.log(allUserInfo);
+const userdetails = {
+    firstName : 'Mohammad',
+    lastName : 'ibrahim',
+    age: 27,
+    profession: 'web engineer'
+}
+const {lastName, profession, ...allUserInfo} = userdetails;
+console.log(lastName, profession);
+console.log(allUserInfo);
 
 
 // spread operator(...)
@@ -79,37 +79,37 @@ console.log(printUser(userInfo));
 // falsy value
 // false, 0, '', null, undefined, Nan
 
-let num = 0;
-let numResult = num || 20;
-console.log(numResult);
+// let num = 0;
+// let numResult = num || 20;
+// console.log(numResult);
 
-let title = '';
-let titleResult = title || 'ohid';
-console.log(titleResult);
+// let title = '';
+// let titleResult = title || 'ohid';
+// console.log(titleResult);
 
-// null & undefined are consider falsy value
-let number = 0;
-let resultNum = number ?? 22;
-console.log(resultNum);
-let text = '';
-let textResult = text ?? 'ibrahim';
-console.log(textResult);
+// // null & undefined are consider falsy value
+// let number = 0;
+// let resultNum = number ?? 22;
+// console.log(resultNum);
+// let text = '';
+// let textResult = text ?? 'ibrahim';
+// console.log(textResult);
 
-console.log(true ?? false);
-console.log(false ?? true);
+// console.log(true ?? false);
+// console.log(false ?? true);
 
-// nested data destructuring 
-const user = {
-    name: 'ohid',
-    id : 2024,
-    // education: {
-    //     degree : 'Bsc',
-            // college:{
-            //     name : 'uctc'
-            // }
-    // }
-}
+// // nested data destructuring 
+// const user = {
+//     name: 'ohid',
+//     id : 2024,
+//     // education: {
+//     //     degree : 'Bsc',
+//             // college:{
+//             //     name : 'uctc'
+//             // }
+//     // }
+// }
 
-const {education: {degree} = {degree: 'Bsc'}} = user;
-console.log(degree);
+// const {education: {degree} = {degree: 'Bsc'}} = user;
+// console.log(degree);
 
