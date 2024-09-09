@@ -1,74 +1,104 @@
-// avrMark  💛
+// selector
+const winnerNames = document.querySelector("#winner_name");
+const winScore = document.querySelector("#win_score");
+const playerOne = document.querySelector("#player_one_score");
+const playerTwo = document.querySelector("#player_two_score");
+const textValue = document.querySelector("#text_value");
+const submitBtn = document.querySelector("#submit_btn");
+const resetBtn = document.querySelector("#reset_btn");
+const playBtnOne = document.querySelector("#play_btn_one");
+const playBtnTwo = document.querySelector("#play_btn_two");
 
-// num < 33 return fail
-// all arr num sum
-// sum num divided by arr.length
-// avgNum divided by 100
-// avgNum result multiply 100
+let winValue = 5;
+let playOne = 0;
+let playTwo = 0;
+let winner = null;
+let gameOver = false;
 
-function avrMark(arr) {
-  let total = 0;
-  for (num of arr) {
-    if (num > 33) {
-      return "Fail !";
-    }
-    total += num;
+playOneTurn = true;
+playTwoTurn = false;
+
+winScore.textContent = winValue;
+
+function winnerValue() {
+  if (playOne === winValue || playTwo === winValue) {
+    gameOver = true;
   }
-  const avrNumber = total / arr.length;
-  const percentage = avrNumber / 100;
-  const result = percentage * 100;
-  return Math.round(result);
 }
-console.log(avrMark([80, 40, 90, 70, 50, 33]));
 
-// maximum number find in array 💛
+function disableBtn() {
+  playBtnOne.setAttribute("disabled", "disabled");
+  playBtnTwo.setAttribute("disabled", "disabled");
+}
 
-function maxNum(arr) {
-  // Method - 1 💚
-  let maxNumber = arr[0];
-  for (num of arr) {
-    if (num > maxNumber) {
-      maxNumber = num;
-      return maxNumber;
-    }
+function winnerName() {
+  if (playOne === winValue) {
+    winnerNames.textContent = "Player One Win ✌";
   }
 
-  // Method - 2 💚
-  //return Math.max(...arr);
-
-  // Method - 3 💚
-  // return Math.max.apply(null, arr);
-
-  // Method - 4 💚
-  // const max = arr.reduce((num, curr)=>{
-  //     const maxNum  = num > curr ? num : curr;
-  //     return maxNum;
-  // })
-  // return max;
+  if (playTwo === winValue) {
+    winnerNames.textContent = "Player Two Win ✌";
+  }
 }
 
-console.log(maxNum([20, 3, 55, 10, 11, 33, 1]));
+function resetAll() {
+  winValue = 5;
+  playOne = 0;
+  playTwo = 0;
+  winner = null;
+  gameOver = false;
 
-// minimum number find in array
+  playerOne.textContent = playOne;
+  playerTwo.textContent = playTwo;
 
-function minNum(arr) {
-  // Method - 1 💚
-  // let minNumber = arr[0];
-  // for(let num of arr){
-  //     if(num < minNumber){
-  //         minNumber = num;
-  //         return minNumber;
-  //     }
-  // }
-  //Method - 2 💚
-  //   return Math.min(...arr);
-  //Method - 3 💚
-  // return Math.min.apply(this, arr)
-  //Method - 4 💚
-    const min = arr.reduce((arg, curr)=>{
-        const minNumber = arg < curr ? arg : curr;
-        return minNumber;
-    })
-    return min;
+  playBtnOne.removeAttribute("disabled");
+  playBtnTwo.removeAttribute("disabled");
 }
-console.log(minNum([22, 1, 33, 44, 100, 99]));
+
+// player one btn event listener
+playBtnOne.addEventListener("click", (e) => {
+  if(playOneTurn){
+    playOne++;
+  playerOne.textContent = playOne;
+  winnerValue();
+  winnerName();
+  playOneTurn = false;
+  playTwoTurn = true;
+
+  playBtnOne.setAttribute('disabled', 'disabled');
+  playBtnTwo.removeAttribute('disabled');
+  }
+  if (gameOver) {
+    disableBtn();
+  }
+});
+
+// player Two btn event listener
+playBtnTwo.addEventListener("click", (e) => {
+  if(playTwoTurn){
+    playTwo++;
+  playerTwo.textContent = playTwo;
+  winnerValue();
+  
+  winnerName();
+  playTwoTurn = false;
+  playOneTurn = true;
+
+  playBtnTwo.setAttribute('disabled', 'disabled');
+  playBtnOne.removeAttribute('disabled');
+  }
+  if (gameOver) {
+    disableBtn();
+  }
+});
+
+submitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const inputValue = textValue.value;
+  winScore.textContent = +inputValue;
+  textValue.value = ' ';
+});
+
+resetBtn.addEventListener("click", (e) => {
+  resetAll();
+});
