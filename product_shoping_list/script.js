@@ -78,3 +78,7 @@ formEle.addEventListener("submit", (e) => {
   const product = inputProduct(productName, productPrice);
   showProductUi(product);
 });
+
+addProductsEle.addEventListener('click', (e) => {
+  console.log(e.target);
+})
