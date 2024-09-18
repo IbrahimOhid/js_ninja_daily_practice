@@ -7,33 +7,33 @@ const addProductsEle = document.querySelector("#addProducts");
 
 let products = [];
 
-function receivedInput() {
+function receiveInput() {
   const productName = productNameEle.value;
   const productPrice = productPriceEle.value;
   return { productName, productPrice };
 }
 
-function clearMsg() {
+function clearMessage() {
   msgEle.textContent = "";
 }
 
-function showMessage(msg, action='success') {
+function showMessage(msg, action = 'success') {
   const textMsg = `<div class="alert alert-${action}" role="alert">${msg}</div>`;
   msgEle.insertAdjacentHTML("afterbegin", textMsg);
   setTimeout(() => {
-    clearMsg();
+    clearMessage();
   }, 2000);
 }
 
-function validationInput(productName, productPrice) {
+function inputValidation(productName, productPrice) {
   let isValid = true;
   if (productName === "" || productPrice === "") {
-    isValid = false;
     showMessage("Please Provide Necessary Input", 'danger');
+    isValid = false;
   }
   if (Number(productPrice) !== Number(productPrice)) {
+    showMessage("Please Provide Product Price Number Digit", 'danger');
     isValid = false;
-    showMessage("Please Provide Product Price Number", 'danger');
   }
   return isValid;
 }
@@ -43,42 +43,39 @@ function resetInput() {
   productPriceEle.value = "";
 }
 
-function inputProduct(productName, productPrice) {
+function addProduct(productName, productPrice){
   const product = {
-    id: products.length + 1,
-    productName,
-    productPrice,
-  };
-  products.push(product);
-  return product;
+      id: products.length + 1,
+      productName,
+      productPrice
+    }
+    products.push(product);
+    return product;
 }
 
-function showProductUi(inputProduct) {
-  const { id, productName, productPrice } = inputProduct;
-  const newProductAdd = `
-                  <div class="d-flex flex-row justify-content-between mb-3 align-items-center" style="background-color: aliceblue; padding: 8px 7px;" data-productId ="${id}">
-                    <div>
-                      <span>${productName} -</span> <span>$${productPrice}</span>
-                    </div>
-                    <div class="d-flex gap-3">
-                      <span style="cursor: pointer;"><i class="bi bi-pencil-square text-success"></i></span>
-                      <span style="cursor: pointer;"><i class="bi bi-trash3 text-danger"></i></span>
-                    </div>
-                  </div>`;
-  addProductsEle.insertAdjacentHTML("beforebegin", newProductAdd);
-  showMessage("Product Added Successfully");
+function showProductUi(addProduct){
+  const {id, productName, productPrice} = addProduct;
+  const newAddProduct = `<div class="d-flex flex-row justify-content-between mb-3 align-items-center" style="background-color: aliceblue; padding: 8px 7px;" data-productId = ${id}>
+              <div>
+                <span>${productName} -</span> <span>$${productPrice}</span>
+              </div>
+              <div class="d-flex gap-3">
+                <span style="cursor: pointer;"><i class="bi bi-pencil-square text-success"></i></span>
+                <span style="cursor: pointer;"><i class="bi bi-trash3 text-danger"></i></span>
+              </div>
+            </div>`;
+            addProductsEle.insertAdjacentHTML('beforebegin', newAddProduct);
+            showMessage("Product Added Successful")
 }
 
-formEle.addEventListener("submit", (e) => {
+function handelSubmitForm(e) {
   e.preventDefault();
-  const { productName, productPrice } = receivedInput();
-  const isValid = validationInput(productName, productPrice);
+  const { productName, productPrice } = receiveInput();
+  const isValid = inputValidation(productName, productPrice);
   if (!isValid) return;
   resetInput();
-  const product = inputProduct(productName, productPrice);
+  const product = addProduct(productName, productPrice);
   showProductUi(product);
-});
+}
 
-addProductsEle.addEventListener('click', (e) => {
-  console.log(e.target);
-})
+formEle.addEventListener("submit", handelSubmitForm);
