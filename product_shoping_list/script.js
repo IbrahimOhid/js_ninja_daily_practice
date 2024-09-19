@@ -60,13 +60,15 @@ function showProductUi(addProduct){
                 <span>${productName} -</span> <span>$${productPrice}</span>
               </div>
               <div class="d-flex gap-3">
-                <span style="cursor: pointer;"><i class="bi bi-pencil-square text-success"></i></span>
-                <span style="cursor: pointer;"><i class="bi bi-trash3 text-danger"></i></span>
+                <span style="cursor: pointer;"><i class="bi bi-pencil-square text-success editProduct"></i></span>
+                <span style="cursor: pointer;"><i class="bi bi-trash3 text-danger deleteProduct"></i></span>
               </div>
             </div>`;
-            addProductsEle.insertAdjacentHTML('beforebegin', newAddProduct);
+            addProductsEle.insertAdjacentHTML('afterbegin', newAddProduct);
             showMessage("Product Added Successful")
 }
+
+
 
 function handelSubmitForm(e) {
   e.preventDefault();
@@ -78,4 +80,27 @@ function handelSubmitForm(e) {
   showProductUi(product);
 }
 
+function removeId(e){
+  const divEle = e.target.parentElement.parentElement.parentElement;
+  const id = Number(divEle.getAttribute('data-productId'));
+  return id;
+}
+
+function removeItem(id){
+ products = products.filter(product => product.id !== id);
+}
+
+function deleteProductUi(id){
+  document.querySelector(`[data-productId = '${id}']`).remove();
+}
+
+function handelDeleteProduct(e){
+  if(e.target.classList.contains('deleteProduct')){
+   const id = removeId(e);
+   removeItem(id);
+   deleteProductUi(id);
+  }
+}
+
 formEle.addEventListener("submit", handelSubmitForm);
+addProductsEle.addEventListener('click', handelDeleteProduct);
