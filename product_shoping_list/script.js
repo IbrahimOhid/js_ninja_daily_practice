@@ -5,7 +5,7 @@ const formEle = document.querySelector("form");
 const msgEle = document.querySelector("#msg");
 const addProductsEle = document.querySelector("#addProducts");
 
-let products = [];
+let products = localStorage.getItem('storeProducts') ? JSON.parse(localStorage.getItem('storeProducts')) : [];
 
 function receiveInput() {
   const productName = productNameEle.value;
@@ -68,6 +68,17 @@ function showProductUi(addProduct){
             showMessage("Product Added Successful")
 }
 
+function addProductToStorage(product){
+  let products
+  if(localStorage.getItem('storeProducts')){
+    products = JSON.parse(localStorage.getItem('storeProducts'));
+    products.push(product);
+  }else{
+    products = []
+    products.push(product);
+  }
+  localStorage.setItem('storeProducts', JSON.stringify(products));
+}
 
 
 function handelSubmitForm(e) {
@@ -77,6 +88,7 @@ function handelSubmitForm(e) {
   if (!isValid) return;
   resetInput();
   const product = addProduct(productName, productPrice);
+  addProductToStorage(product);
   showProductUi(product);
 }
 
@@ -102,5 +114,28 @@ function handelDeleteProduct(e){
   }
 }
 
+function showAllProductUi(products){
+  
+  let divElems 
+  divElems = products.length === 0 ? `<div class="alert alert-secondary" role="alert">No Product Added</div>` : '';
+  products.forEach(product => {
+    const {id, productName, productPrice} = product;
+    divElems += `<div class="d-flex flex-row justify-content-between mb-3 align-items-center" style="background-color: aliceblue; padding: 8px 7px;" data-productId = ${id}>
+              <div>
+                <span>${productName} -</span> <span>$${productPrice}</span>
+              </div>
+              <div class="d-flex gap-3">
+                <span style="cursor: pointer;"><i class="bi bi-pencil-square text-success editProduct"></i></span>
+                <span style="cursor: pointer;"><i class="bi bi-trash3 text-danger deleteProduct"></i></span>
+              </div>
+            </div>`;
+            addProductsEle.insertAdjacentHTML('afterbegin', divElems)
+
+  })
+}
+
 formEle.addEventListener("submit", handelSubmitForm);
 addProductsEle.addEventListener('click', handelDeleteProduct);
+document.addEventListener('DOMContentLoaded', ()=>{
+  showAllProductUi(products);
+})
