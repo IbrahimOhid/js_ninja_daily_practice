@@ -54,3 +54,21 @@ function repeat(n){
     }
 }
 repeat(3);
+
+const arr = [1, 14, 2, 100, 3, 6];
+console.log(arr.sort((a, b)=> {
+   return a - b;
+}));
+console.log(arr.sort((a, b) => {
+    return b - a;
+}));
+
+const laptop = [
+    {brand: 'dell', year: 2022},
+    {brand: 'zxer', year: 1971},
+    {brand: 'acer', year: 2001}
+]
+// console.log(laptop.sort((a, b)=>{
+//     return a.year - b.year;
+// }));
+

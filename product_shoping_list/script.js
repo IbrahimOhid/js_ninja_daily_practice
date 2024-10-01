@@ -116,11 +116,11 @@ function handelDeleteProduct(e){
 
 function showAllProductUi(products){
   
-  let divElems 
-  divElems = products.length === 0 ? `<div class="alert alert-secondary" role="alert">No Product Added</div>` : '';
+  let divElm 
+  divElm = products.length === 0 ? '<div class="alert alert-secondary" role="alert">No Product Added</div>' : '';
   products.forEach(product => {
     const {id, productName, productPrice} = product;
-    divElems += `<div class="d-flex flex-row justify-content-between mb-3 align-items-center" style="background-color: aliceblue; padding: 8px 7px;" data-productId = ${id}>
+    divElm += `<div class="d-flex flex-row justify-content-between mb-3 align-items-center" style="background-color: aliceblue; padding: 8px 7px;" data-productId = ${id}>
               <div>
                 <span>${productName} -</span> <span>$${productPrice}</span>
               </div>
@@ -129,7 +129,7 @@ function showAllProductUi(products){
                 <span style="cursor: pointer;"><i class="bi bi-trash3 text-danger deleteProduct"></i></span>
               </div>
             </div>`;
-            addProductsEle.insertAdjacentHTML('afterbegin', divElems)
+            addProductsEle.insertAdjacentHTML('afterbegin', divElm)
 
   })
 }
