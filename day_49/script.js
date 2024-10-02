@@ -114,3 +114,8 @@ console.log(result2);
 const email = 'ibrahimohid77@gmail.com, ibrahim@webdeveloper.netbd';
 const resultEmail = email.match(/\w{2,20}@\w{2,20}\.\w{2,5}/gi);
 console.log(resultEmail);
+
+// website address validation 💛💛💛
+const website = 'https://ibrahim.com, www.ibrahim.com, ibrahim.com, http://ibrahim.com';
+const resultWeb = website.match(/(https:\/\/|http:\/\/|www\.)?\w{2,10}\.\w{2,5}/gi);
+console.log(resultWeb);
