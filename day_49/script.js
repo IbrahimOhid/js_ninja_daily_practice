@@ -119,3 +119,8 @@ console.log(resultEmail);
 const website = 'https://ibrahim.com, www.ibrahim.com, ibrahim.com, http://ibrahim.com';
 const resultWeb = website.match(/(https:\/\/|http:\/\/|www\.)?\w{2,10}\.\w{2,5}/gi);
 console.log(resultWeb);
+
+// strong Password Validation 💛💛💛
+const password = 'abA124@1ab'
+const passResult = password.match(/^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[!@#$%^&*()\-=+\|\[\]{};:?.>]).{8,10}$/g)
+console.log(passResult)
