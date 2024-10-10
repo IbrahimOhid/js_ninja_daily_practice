@@ -125,7 +125,9 @@ a()
   .then((data) => {
     console.log(data);
   })
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    console.log(err);
+  });
 
 function b() {
   return new Promise((resolve, reject) => {
@@ -139,4 +141,72 @@ b()
   .then((data) => {
     console.log(data);
   })
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    console.log(err);
+  });
+
+function c() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      //resolve(2)
+      reject(new Error(404));
+    }, 2000);
+  });
+}
+c()
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
+
+  // promise hell 💛🧡
+function d() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(5);
+    }, 2000);
+  });
+}
+
+function e() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(5);
+    }, 2000);
+  });
+}
+
+function f() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(5);
+    }, 2000);
+  });
+}
+
+d()
+  .then((num5) => {
+    console.log(num5);
+    e()
+      .then((num6) => {
+        console.log(num6);
+        console.log(num5 + num6);
+        f()
+          .then((num7) => {
+            console.log(num7);
+            console.log(num5 + num6 + num7);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
