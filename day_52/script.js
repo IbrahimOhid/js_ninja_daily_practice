@@ -210,3 +210,56 @@ d()
   .catch((err) => {
     console.log(err);
   });
+
+
+  const x = Promise.resolve(5);
+  x.then((data)=>{
+    console.log(data)
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+
+
+  const y = Promise.reject(4);
+  y.then((data)=>{
+    console.log(data);
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+
+ function twenty(){
+    // return Promise.resolve(3);
+    return Promise.reject(404);
+  }
+
+  twenty()
+  .then((data)=>{
+    console.log(data)
+  })
+  .catch((err)=>{
+    console.log(err);
+  });
+
+  // promise all 💛💛💛
+  const p = Promise.reject(1);
+  const q = Promise.reject(2);
+  const r = Promise.resolve(3);
+
+  Promise.all([p,q,r])
+  .then((data)=>{
+    console.log(data);
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+
+  // promise race 💛💛💛
+  Promise.race([p,q,r])
+  .then((data)=>{
+    console.log(data);
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
