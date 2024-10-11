@@ -1,0 +1,168 @@
+// // async await 💛💛💛
+
+// function one(){
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(() => {
+//       resolve(1);
+//     }, 2000);
+//   })
+//   }
+
+//   function two(){
+//     return new Promise((resolve, reject)=>{
+//       setTimeout(() => {
+//         resolve(2);
+//       }, 2000);
+//     })
+//     }
+
+//     function three(){
+//       return new Promise((resolve, reject)=>{
+//         setTimeout(() => {
+//           reject('error');
+//         }, 2000);
+//       })
+//       }
+
+//  async function run() {
+//  try{
+//   const out1 = await one();
+//  const out2 = await two();
+//  const out3 = await three();
+//  console.log(out1, out2, out3);
+//  }
+//  catch(err){
+//   console.log(err);
+//  }
+//  }
+//  run();
+
+//  function four(){
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(() => {
+//       resolve(4)
+//     }, 2000);
+//   })
+//  };
+
+//  function five(){
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(() => {
+//       resolve(5)
+//     }, 2000);
+//   })
+//  };
+
+//  function six(){
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(() => {
+//       resolve(6)
+//     }, 2000);
+//   })
+//  };
+
+//  async function allInput() {
+//  try{
+//   const outFour = await four();
+//   const outFive= await five();
+//   const outSix = await six();
+//   //console.log(outFour, outFive, outSix);
+//   return [outFour, outFive, outSix]
+//  }
+//  catch(err){
+//   console.log(err);
+//  }
+//  }
+
+// (async function(){
+//   console.log(await allInput())
+// })();
+
+// Asynchronous practice 💚💚💚
+// function getValue(){
+//   var x;
+//   setTimeout(() => {
+//    x = 12;
+//   }, 2000);
+//   return x;
+// }
+// const value = getValue();
+// console.log(value);
+
+// Callback practice 💚💚💚
+// function getVar(){
+//   setTimeout(() => {
+//     console.log('A Function that takes some time');
+//   }, 3000);
+// }
+
+// function anotherFun(){
+//   console.log('Another Function');
+// }
+
+// console.log(getVar());
+// console.log(anotherFun());
+
+// function myName(Callback){
+//   setTimeout(() => {
+//     console.log('Ibrahim');
+//     Callback()
+//   }, 3000);
+// }
+
+// function broName(){
+//   console.log("Ebnol");
+// }
+
+// myName(broName);
+
+// function num(a,b, callback){
+//   setTimeout(() => {
+//     console.log(a+b);
+//     callback()
+//   }, 5000);
+// }
+
+// function info(){
+//   console.log('Another Function');
+// }
+// num(15, 3, info);
+
+// promise practice 💛💛💛
+// function marryMe() {
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(() => {
+//       //resolve('Success');
+//       reject('No')
+//     }, 3000);
+//   })
+// }
+
+// marryMe()
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// async & await
+
+function newPromise(){
+  return new Promise((resolve, reject)=>{
+    setTimeout(() => {
+      if(true){
+        resolve('Yes');
+      }
+      else{
+        reject("No")
+      }
+    }, 5000);
+  })
+}
+
+async function result() {
+  const finalResult = await newPromise();
+  console.log(finalResult);
+}
+result()
