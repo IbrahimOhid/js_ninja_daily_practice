@@ -264,14 +264,36 @@
 // nameResult();
 
 
-async function getData(){
-  let url = await fetch('https://jsonplaceholder.typicode.com/users');
-  let data = await url.json();
-  console.log(data);
-}
+// async function getData(){
+//   let url = await fetch('https://jsonplaceholder.typicode.com/users');
+//   let data = await url.json();
+//   console.log(data);
+// }
 
-async function anotherData() {
-  const data = await getData();
-  console.log('ohid');
-}
-anotherData()
+// async function anotherData() {
+//   const data = await getData();
+//   console.log('ohid');
+// }
+// anotherData()
+
+
+
+// forEach practice
+const users = ['ibrahim', 'rifa', 'rahim', 'ebnol'];
+users.forEach((user)=>{
+  console.log(user);
+});
+
+// map practice
+// const numbers = [1, 2, 3, 4, 5];
+// const result = numbers.map((num)=> num * 2);
+// console.log(result);
+
+// filter practice
+const numbers = [5, 2, 1, 10, 11];
+const result = numbers.filter((number)=> number > 5);
+console.log(result);
+
+const userInfo = [
+  {name:'ibrahim', age: 26, profession}
+]
