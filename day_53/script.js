@@ -148,21 +148,130 @@
 
 // async & await
 
-function newPromise(){
-  return new Promise((resolve, reject)=>{
-    setTimeout(() => {
-      if(true){
-        resolve('Yes');
-      }
-      else{
-        reject("No")
-      }
-    }, 5000);
-  })
+// function newPromise(){
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(() => {
+//       if(true){
+//         resolve('Yes');
+//       }
+//       else{
+//         reject("No")
+//       }
+//     }, 5000);
+//   })
+// }
+
+// async function result() {
+//   const finalResult = await newPromise();
+//   console.log(finalResult);
+// }
+// result();
+
+// function aPromise(){
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(() => {
+//       if(false){
+//         reject('Error')
+//       }
+//       else{
+//         resolve('Show Data')
+//       }
+//     }, 3000);
+//   })
+// }
+
+// async function resultPromise() {
+//   try{
+//     const data = await aPromise();
+//     console.log(data);
+//   }
+//   catch(err){
+//     console.log(err);
+//   }
+// }
+// resultPromise();
+
+// function promiseOne(){
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(() => {
+//       if(true){
+//         resolve('Promise 1 Resolved');
+//       }
+//       else{
+//         reject("Promise 1 Failed")
+//       }
+//     }, 3000);
+//   })
+// }
+
+// function promiseTwo(){
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(() => {
+//       if(true){
+//         resolve("Promise 2 Resolved")
+//       }
+//       else{
+//         reject("Promise 2 Failed")
+//       }
+//     }, 3000);
+//   })
+// }
+
+// async function promiseResult() {
+//   const data = await Promise.all([promiseOne, promiseTwo]);
+//   console.log(data);
+// }
+// promiseResult();
+
+
+// function getName(){
+//   return new Promise((resolve, reject)=>{
+//     resolve('ibrahim')
+//   })
+// }
+
+// function getAge(name){
+//   return new Promise((resolve, reject)=>{
+//     if(name === 'ibrahim'){
+//       resolve(21);
+//     }
+//     else{
+//       reject('Data Not Found');
+//     }
+//   })
+// }
+
+// async function result() {
+//   const name = await getName();
+//   const age = await getAge(name);
+//   console.log('My Name is ' + name + ' i am ' + age + ' old');
+// }
+// result();
+
+// function myName(){
+//   return new Promise((resolve, reject)=>{
+//     setTimeout(() => {
+//       resolve('iBRAHIM');
+//     }, 3000);
+//   })
+// }
+
+// async function nameResult() {
+//   const data = await myName();
+//   console.log(data);
+//   console.log('one..');
+// }
+// nameResult();
+
+
+async function getData(){
+  let url = await fetch('https://jsonplaceholder.typicode.com/users');
+  let data = await url.json();
+  console.log(data);
 }
 
-async function result() {
-  const finalResult = await newPromise();
-  console.log(finalResult);
+async function anotherData() {
+  const data = await getData();
+  console.log('ohid');
 }
-result()
+anotherData()
