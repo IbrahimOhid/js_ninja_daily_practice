@@ -63,29 +63,77 @@
 // }
 // receiveUser();
 
-
 // getting all posts
-// async function getPost() {
-//   try{
-//     const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-//     const data = await res.json();
-//     console.log(data.slice(0, 10));
-//   }
-//   catch(err){
-//     console.log('Data not Found');
-//   }
-// }
-// getPost();
+async function getPost() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  const data = await res.json();
+  return data;
+}
 
-// getting single post
-// async function getData() {
-//   try{
-//     const res = await fetch('https://jsonplaceholder.typicode.com/posts/2')
-//     const data = await res.json();
-//     console.log(data);
-//   }
-//   catch(err){
-//     console.log('Data Not Found');
-//   }
-// }
-// getData();
+// adding single post
+async function getData() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts/2");
+  const data = await res.json();
+  return data;
+}
+getData();
+
+// adding Post
+async function addPost() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify({
+      name: "Mohammad",
+      age: 27,
+      profession: "Web Engineer",
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+  const data = await res.json();
+  return data;
+}
+addPost();
+
+// // updating post
+async function updatePost() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
+    method: "PATCH",
+    body: JSON.stringify({
+      title: "Ibrahim OHid",
+      profession: "Front End Developer",
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  });
+  const data = await res.json();
+  return data;
+}
+updatePost();
+
+// // delete post
+async function deletePost() {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts/1", {
+    method: "DELETE",
+  });
+  const data = await res.json();
+  return data;
+}
+deletePost();
+
+async function run() {
+  try{
+    const posts = await getPost();
+    const singlePost = await getData();
+    const addedPost = await addPost();
+    const updatedPost = await updatePost();
+    const deletedPost = await deletePost();
+    console.log(deletedPost);
+  }
+  catch(err){
+    console.log(err);
+  }
+}
+run();
