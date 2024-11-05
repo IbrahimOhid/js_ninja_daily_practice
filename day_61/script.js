@@ -19,6 +19,7 @@
 
 // // sum all value 💚💚💚
 // // reduce (mandatory)
+// Reduce Best Practice 💛💛💛💛
 
 // function sum(arr){
 //  return arr.reduce((acc, cur)=>{
@@ -26,7 +27,7 @@
 //     console.log(cur);
 //     return acc+=cur;
 //  })
- 
+
 // }
 // console.log(sum([1, 2, 3, 4, 5]));
 
@@ -45,11 +46,37 @@
 
 // 💚💚💚
 // answer: {total: 6}
-let arr2 = [{a:3}, {a:1}, {a:2}];
-function sumArr2(inputArr2){
-    return inputArr2.reduce((acc, cur)=>{
-        acc.total += cur.a;
-        return acc
-    }, {total: 0})
-}
-console.log(sumArr2(arr2));
+// let arr2 = [{a:3}, {a:1}, {a:2}];
+// function sumArr2(inputArr2){
+//     return inputArr2.reduce((acc, cur)=>{
+//         acc.total += cur.a;
+//         return acc
+//     }, {total: 0})
+// }
+// console.log(sumArr2(arr2));
+
+
+// answer: [ 1, 2, 3, 4, 5, 6 ] 💚💚💚
+// let numArray = [
+//     [1,2],
+//     [3],
+//     [4],
+//     [5,6]
+// ].reduce(function (value1, value2){
+//     return value1.concat(value2)
+// }, [])
+// console.log(numArray); 
+
+
+//AnsWer: { ibrahim: 2, rahim: 1, karim: 2, jisan: 1, ohid: 1, mohammad: 1 } 💚💚💚
+let userName = ['ibrahim', 'rahim', 'karim', 'ibrahim', 'jisan', 'ohid', 'karim', 'mohammad'];
+let countNames = userName.reduce(function (allName, name){
+    if(name in allName){
+        allName[name]++;
+    }
+    else{
+        allName[name] = 1;
+    }
+    return allName;
+}, {})
+console.log(countNames); 
