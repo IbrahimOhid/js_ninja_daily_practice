@@ -42,4 +42,16 @@ console.log(strA);
 console.log(strA.length);
 console.log(strA.toLocaleUpperCase());
 
-// 
+// array
+const arrC = new Array(1,2,3,4)
+console.log(arrC.length);
+console.log(arrC);
+
+// object
+const nameInfo = new Object({
+    name1: 'ibrahim',
+    name2: 'ohid'
+})
+console.log(nameInfo);
+console.log(nameInfo.name1);
+console.log(nameInfo.name2);
