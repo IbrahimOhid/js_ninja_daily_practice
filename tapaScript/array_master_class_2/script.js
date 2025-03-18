@@ -55,3 +55,16 @@ console.log(nums.length);
 nums.length = 5;
 console.log(nums.length);
 
+
+// create, update, remove, access method 💛💛💛
+
+// concat 💛
+const num1 = [1,2,3];
+const num2 = [4,5,6];
+const marged = num1.concat(num2);
+console.log(marged);
+
+const num3 = [2,3,4,5];
+const num4 = [6, 7, 8, 9];
+const num5 = [10, 11, 12, 13];
+console.log(num3.concat(num5, num4));
