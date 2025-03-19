@@ -68,3 +68,69 @@ const num3 = [2,3,4,5];
 const num4 = [6, 7, 8, 9];
 const num5 = [10, 11, 12, 13];
 console.log(num3.concat(num5, num4));
+
+// join 💛
+const fullName = ['Mohammad', 'Ibrahim', 'Ohid'];
+const joining = fullName.join(' ');
+console.log(joining);
+
+// fill 💛
+const fruit = ['banana', 'orange', 'potato', 'grape'];
+// const fillFruit = fruit.fill('mango');
+// console.log(fillFruit);
+const againFill = fruit.fill('tomato',2,4);
+console.log(againFill);
+
+// includes 💛
+const userInfo = ['rahim', 'korim', 'fahim', 'mahim', 'korim', 'ahmed', 'babul', 'ahmed'];
+console.log(userInfo.includes('rahim'));
+
+console.log(userInfo.indexOf('korim'));
+console.log(userInfo.lastIndexOf('korim'));
+console.log(userInfo.indexOf('ahmed'));
+console.log(userInfo.lastIndexOf('ahmed'));
+
+// reverse 💛
+const laptop = ['dell', 'hp', 'acer', 'Lenovo'];
+console.log(laptop.reverse());
+
+// sort 💛
+const number = [3, 20, 223, 100, 2, 5, 1, 99, 10938];
+
+// const resultNum = number.sort(function(a,b){return a - b});
+const resultNum = number.sort(function(a,b){return b - a});
+console.log(resultNum);
+
+// splice 💛
+const names = ['habul', 'kabul', 'babul', 'rahul', 'dahul'];
+const resultName = names.splice(1,0,'rahim');
+console.log(names);
+
+const spliceName = ['potato', 'orange', 'banana', 'mango', 'papaya'];
+const spliceResult = spliceName.splice(2, 2, 'grape');
+console.log(spliceResult);
+console.log(spliceName);
+
+console.log(spliceName.length = 0);
+console.log(spliceName);
+
+// at 💛
+const newName = ['ibrhim', 'rahim', 'karim', 'mohammad', 'ohid', 'rafiya'];
+console.log(newName.at(3));
+console.log(newName.at(-5));
+
+// flat 💛
+const allNum = [1, 2, 3, [4, [5, 6, [7, 8, [9, 10]]]]];
+console.log(allNum.flat(Infinity));
+
+// toReversed 💛
+const num11 = [11, 12, 13, 14, 15];
+console.log(num11.toReversed());
+
+// toSorted 💛
+const month = ['jan', 'feb', 'march', 'april'];
+console.log(month.toSorted());
+
+// toSpliced 💛
+const playName = ['cricket', 'football', 'boliball', 'racket'];
+console.log(playName.toSpliced(1,1,'caram'));
