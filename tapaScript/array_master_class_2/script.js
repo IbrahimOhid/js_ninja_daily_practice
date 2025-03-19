@@ -134,3 +134,7 @@ console.log(month.toSorted());
 // toSpliced 💛
 const playName = ['cricket', 'football', 'boliball', 'racket'];
 console.log(playName.toSpliced(1,1,'caram'));
+
+// with 💛
+const againNum = [1, 2, 3, 4, 5];
+console.log(againNum.with(2, 33));
