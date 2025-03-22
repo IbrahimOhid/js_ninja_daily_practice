@@ -58,4 +58,39 @@ console.log(userName.concat());
 
 const studentName = ['habul', 'babul', 'rabul', 'karim'];
 console.log(studentName.length = 0);
-console.log(studentName.length);
+console.log(studentName);
+
+// T-011: Create an array of 10 elements(number 1 to 10). Resize the array to length 6 once you find the number 5 in that array. Hint: Use for-loop. 💛💛💛
+
+const idNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+for(let i = 0; i < idNum.length; i++){
+    if(idNum[i] === 5){
+        idNum.length = 6
+        console.log(idNum);
+    }
+}
+
+// T-012: Create an Array of 10 elements. Use the splice() method to empty the array. 💛💛💛
+
+const newArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(newArr.splice(0, newArr.length));
+console.log(newArr);
+
+// T-013: Create an Array of 10 elements. You can empty the array in multiple ways: using the length property, using the pop() method, using the shift() method, setting the array with [], or the splice() method. Which among these methods are most efficient and why? 💛💛💛
+
+let againArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const emptyArrL = againArr.length = 0;
+// const emptyArrPop = againArr.pop(againArr.length = 0);
+// const emptyArrShift = againArr.shift(againArr.length = 0);
+// const emptyArrSplice = againArr.splice(0, againArr.length);
+againArr = []
+console.log(againArr);
+
+// T-014: What happens when you concatenate two empty arrays? 💛💛💛
+
+const arr1 = [];
+const arr2 = [];
+console.log(arr1.concat(arr2));
+
+
