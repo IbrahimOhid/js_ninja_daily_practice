@@ -100,3 +100,19 @@ const uptoExpense = customers.filter((customer)=>{
    return customer.expense >= 200;
 })
 console.log(uptoExpense);
+
+
+const addFullName = customers.map((customer)=>{
+   let title = '';
+   if(customer.gender === 'M'){
+      title = 'Mr'
+   }else if(customer.gender === 'F' && customer.married){
+      title = 'Mrs'
+   }
+   else{
+      title = 'Miss'
+   }
+   customer['full_name'] = `${title} ${customer.f_name} ${customer.l_name}`;
+   return customer
+})
+console.log(addFullName);
