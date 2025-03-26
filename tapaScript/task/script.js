@@ -93,4 +93,35 @@ const arr1 = [];
 const arr2 = [];
 console.log(arr1.concat(arr2));
 
+// T-015: How can you check if a value is partially matching with any of the elements of an Array? 💛💛💛
+
+const food = ['apple','orange', 'banana', 'grape'];
+
+const matchFood  = food.find((fruit)=> fruit.includes('app'));
+console.log(matchFood);
+
+// const matchFood  = food.filter((fruit)=> fruit.includes('app'));
+// console.log(matchFood);
+
+// const matchFood  = food.some((fruit)=> fruit.includes('app'));
+// console.log(matchFood);
+
+// T-016: What is the difference between the slice() and splice() methods? 💛💛💛
+
+// slice immutable
+const sliceArr = [1, 2, 3, 4];
+console.log(sliceArr.slice(1,3));
+console.log(sliceArr);
+
+// splice mutable
+const spliceArr = [1, 2, 3, 4];
+console.log(spliceArr.splice(1,2));
+console.log(spliceArr);
+
+// T-017: Create an Array of alphanumeric strings. Sort the elements in both ascending and descending orders. You must be doing this in an immutable way such that the source array never gets modified. 💛💛💛
+
+const alphanumericArray = ['abc123', 'def456', 'xyz789', 'user1', 'pass42'];
+
+
+
 
