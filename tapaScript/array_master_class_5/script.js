@@ -101,7 +101,7 @@ const uptoExpense = customers.filter((customer)=>{
 })
 console.log(uptoExpense);
 
-
+// map 💛💛💛
 const addFullName = customers.map((customer)=>{
    let title = '';
    if(customer.gender === 'M'){
@@ -116,3 +116,44 @@ const addFullName = customers.map((customer)=>{
    return customer
 })
 console.log(addFullName);
+
+const mapArr = ['i', 'Love', "pRogramMing"];
+const newMap = mapArr.map((elm)=>{
+   return elm.toUpperCase();
+})
+console.log(newMap);
+console.log(mapArr);
+
+const conMap = mapArr.map((elm)=>{
+   // if(elm === 'pRogramMing'){
+   //    return elm + '!';
+   // }else{
+   //    return elm;
+   // }
+   return elm === 'pRogramMing' ? elm + '!' : elm;
+})
+console.log(conMap);
+
+// reduce 💛💛💛
+let count = 0;
+const totalAge = customers.reduce((acc, customer)=>{
+   if(customer.purchased.includes('Book')){
+      acc = acc + customer.age;
+      count = count + 1;
+   }
+   return acc;
+}, 0)
+const avgAge = Math.floor(totalAge / count);
+console.log(avgAge);
+
+const num = [10, 20, 30];
+
+const total = num.reduce((acc, cur)=>{
+  return acc = acc + cur;
+})
+console.log(total);
+
+const totalNum = num.reduce((acc, cur)=>{
+   return acc = acc + cur;
+}, 0);
+console.log(totalNum);
