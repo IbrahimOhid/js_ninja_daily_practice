@@ -158,6 +158,16 @@ const totalNum = num.reduce((acc, cur)=>{
 }, 0);
 console.log(totalNum);
 
+// reduce right 💛💛💛
+
+const number = [10, 8, 5];
+
+const numResult = number.reduceRight((acc, curr)=>{
+   // return acc + curr;
+   return acc - curr;
+});
+console.log(numResult);
+
 // some 💛💛💛
 
 const ageLessTen = customers.some((customer)=>{
@@ -171,3 +181,28 @@ const youngCustomer = customers.find((cu)=>{
    return cu.age < 10;
 });
 console.log(youngCustomer);
+
+// array chaining 💛💛💛
+
+const marriedCustomer = customers.filter((customer)=>{
+   return customer.married;
+});
+console.log(marriedCustomer);
+
+const expenseCustomer = marriedCustomer.map((customer)=>{
+   return customer.expense;
+})
+console.log(expenseCustomer);
+
+const totalExpense = expenseCustomer.reduce((acc, curr)=>{
+   return acc + curr;
+})
+console.log(totalExpense);
+
+// short chaining 💛💛💛
+
+const totalExpenseAmount = customers.filter(customer => customer.married)
+                                    .map(married => married.expense)
+                                    .reduce((acc, curr)=> acc + curr)
+console.log(totalExpenseAmount);
+
