@@ -157,3 +157,17 @@ const totalNum = num.reduce((acc, cur)=>{
    return acc = acc + cur;
 }, 0);
 console.log(totalNum);
+
+// some 💛💛💛
+
+const ageLessTen = customers.some((customer)=>{
+   return customer.age > 10;
+});
+console.log(ageLessTen);
+
+// find 💛💛💛
+
+const youngCustomer = customers.find((cu)=>{
+   return cu.age < 10;
+});
+console.log(youngCustomer);
