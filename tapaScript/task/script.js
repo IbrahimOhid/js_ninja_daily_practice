@@ -18,7 +18,7 @@ console.log(newNum);
 
 const yourNum = [1, 2, 3, 4, 5, 6];
 
-for(let i = 1; i < yourNum.length; i+=2){
+for (let i = 1; i < yourNum.length; i += 2) {
     console.log(yourNum[i]);
 }
 
@@ -38,15 +38,15 @@ console.log(game);
 
 // T-007: Create an array containing the name of your favourite foods(10 foods). Destructure the 6th food element from the array using destructuring. 💛💛💛
 
-const favoriteFood = ['🍊','🥦','🍅','🍄','🍆','🍌','🌶','🌽','🥕','🍉'];
-const [, , , , ,banana] = favoriteFood;
+const favoriteFood = ['🍊', '🥦', '🍅', '🍄', '🍆', '🍌', '🌶', '🌽', '🥕', '🍉'];
+const [, , , , , banana] = favoriteFood;
 console.log(banana);
 
- // T-008: Take out the last 8 food items from the above array using the Array destructuring. Hint: rest parameter.
+// T-008: Take out the last 8 food items from the above array using the Array destructuring. Hint: rest parameter.
 
- const favFood = ['🍊','🥦','🍅','🍄','🍆','🍌','🌶','🌽','🥕','🍉'];
- const [orange, Cauliflower, ...fruits] = favFood;
- console.log(fruits);
+const favFood = ['🍊', '🥦', '🍅', '🍄', '🍆', '🍌', '🌶', '🌽', '🥕', '🍉'];
+const [orange, Cauliflower, ...fruits] = favFood;
+console.log(fruits);
 
 // T-009: Clone an Array(Shallow cloning) 💛💛💛
 
@@ -64,8 +64,8 @@ console.log(studentName);
 
 const idNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-for(let i = 0; i < idNum.length; i++){
-    if(idNum[i] === 5){
+for (let i = 0; i < idNum.length; i++) {
+    if (idNum[i] === 5) {
         idNum.length = 6
         console.log(idNum);
     }
@@ -95,9 +95,9 @@ console.log(arr1.concat(arr2));
 
 // T-015: How can you check if a value is partially matching with any of the elements of an Array? 💛💛💛
 
-const food = ['apple','orange', 'banana', 'grape'];
+const food = ['apple', 'orange', 'banana', 'grape'];
 
-const matchFood  = food.find((fruit)=> fruit.includes('app'));
+const matchFood = food.find((fruit) => fruit.includes('app'));
 console.log(matchFood);
 
 // const matchFood  = food.filter((fruit)=> fruit.includes('app'));
@@ -110,18 +110,87 @@ console.log(matchFood);
 
 // slice immutable
 const sliceArr = [1, 2, 3, 4];
-console.log(sliceArr.slice(1,3));
+console.log(sliceArr.slice(1, 3));
 console.log(sliceArr);
 
 // splice mutable
 const spliceArr = [1, 2, 3, 4];
-console.log(spliceArr.splice(1,2));
+console.log(spliceArr.splice(1, 2));
 console.log(spliceArr);
 
 // T-017: Create an Array of alphanumeric strings. Sort the elements in both ascending and descending orders. You must be doing this in an immutable way such that the source array never gets modified. 💛💛💛
 
-const alphanumericArray = ['abc123', 'def456', 'xyz789', 'user1', 'pass42'];
+const alphanumericArray = ['abc123', 'def789', 'xyz456', 'user1', 'pass42'];
+// Immutable ascending sort (using spread operator)
+console.log([...alphanumericArray].sort());
+// Immutable descending sort
+console.log(alphanumericArray.sort().reverse());
+
+// T-018: Can you give examples of sparse and dense arrays? 💛💛💛
+
+/// ????
+
+// T-019: Give a practical usages of the .fill() method 💛💛💛
+
+const color = ['red', 'blue', 'yellow', 'pink'];
+console.log(color.fill('orange', 2, 4));
+
+// T-020: How to convert an array to a string? 💛💛💛
+
+const conStr = [1, 2, 3, 4, 5];
+console.log(conStr.toString());
+
+const allStr = ['apple', 'banana', 'orange', 'grape'];
+console.log(allStr.toString());
+
+// 💛💛💛💛💛💛💛💛💛💛
+const employees = [
+    { id: 1, name: "Alice", departmentId: 1, salary: 5000 },
+    { id: 2, name: "Bob", departmentId: 2, salary: 7000 },
+    { id: 3, name: "Charlie", departmentId: 3, salary: 4500 },
+    { id: 4, name: "Diana", departmentId: 1, salary: 5500 },
+    { id: 5, name: "Edward", departmentId: 2, salary: 8000 },
+    { id: 6, name: "Fiona", departmentId: 4, salary: 6000 },
+    { id: 7, name: "George", departmentId: 3, salary: 5200 },
+    { id: 8, name: "Helen", departmentId: 4, salary: 7200 },
+    { id: 9, name: "Ian", departmentId: 2, salary: 4800 },
+    { id: 10, name: "Jane", departmentId: 1, salary: 5100 },
+];
+
+const departments = [
+    { id: 1, name: "HR" },
+    { id: 2, name: "Engineering" },
+    { id: 3, name: "Marketing" },
+    { id: 4, name: "Sales" },
+];
+
+// T-021: Can you filter employees who work in the "Engineering" department? 💛💛💛💛
+
+// const checkEng = departments.find(department => department.name === 'Engineering').id;
+// console.log(checkEng);
 
 
+// const depId = employees.filter((employee) => {
+
+//     return employee.departmentId === checkEng;
+
+// })
+// console.log(depId);
+
+// T-022: Create a new array that combines employee names and department names in the format: "Alice (HR)". 💛💛💛
+
+const depIds = departments.filter(department=> department.id)
+console.log(depIds);
+
+const combineEmp = employees.map((employee)=>{
+    console.log(depIds.id);
+    console.log(employee.departmentId);
+   if(employee.departmentId === depIds.id){
+    return `${employee.name} (${depIds.name})`
+   }else{
+    employee
+   }
+});
+console.log(combineEmp);
 
 
