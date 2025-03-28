@@ -166,31 +166,41 @@ const departments = [
 
 // T-021: Can you filter employees who work in the "Engineering" department? 💛💛💛💛
 
-// const checkEng = departments.find(department => department.name === 'Engineering').id;
-// console.log(checkEng);
-
-
-// const depId = employees.filter((employee) => {
-
-//     return employee.departmentId === checkEng;
-
-// })
-// console.log(depId);
+const employeeDep = employees.filter((employee)=>{
+    const checkEng = departments.find(dep => dep.name === 'Engineering').id;
+    return employee.departmentId === checkEng;
+});
+console.log(employeeDep);
 
 // T-022: Create a new array that combines employee names and department names in the format: "Alice (HR)". 💛💛💛
 
-const depIds = departments.filter(department=> department.id)
-console.log(depIds);
-
 const combineEmp = employees.map((employee)=>{
-    console.log(depIds.id);
-    console.log(employee.departmentId);
-   if(employee.departmentId === depIds.id){
-    return `${employee.name} (${depIds.name})`
-   }else{
-    employee
-   }
-});
+    const departmentId = departments.find(dep => dep.id ===  employee.departmentId);
+    return `${employee.name} (${departmentId.name})`;
+})
 console.log(combineEmp);
 
+// T-023: Find the highest salary among employees. 💛💛💛
 
+const highSalary = employees.reduce((max, employeeSalary)=>{
+    return max > employeeSalary.salary ? max : employeeSalary.salary;
+}, 0)
+console.log(highSalary);
+
+// T-024: Check if there is at least one employee in the "Sales" department. 💛💛💛
+
+const salesEmp = employees.filter((employee)=>{
+    const depSales = departments.find(depName => depName.name === 'Sales').id;
+    return employee.departmentId === depSales;
+});
+console.log(salesEmp);
+
+// T-025: Write a function to filter employees earning more than 6000. 💛💛💛
+
+const highEarning = employees.filter(employee=> employee.salary > 6000);
+console.log(highEarning);
+
+// T-026: Create an array of employee names only. 💛💛💛
+
+const employeeName = employees.map(employee => employee.name);
+console.log(employeeName);
