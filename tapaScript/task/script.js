@@ -204,3 +204,76 @@ console.log(highEarning);
 
 const employeeName = employees.map(employee => employee.name);
 console.log(employeeName);
+
+// T-027: Calculate the total salary of all employees using 💛💛💛
+
+const totalSalary = employees.reduce((acc, curr)=>{
+    return acc + curr.salary;
+}, 0);
+console.log(totalSalary);
+
+// T-028: Is there any employee earning less than 5000? 💛💛💛
+
+const lessSalary = employees.find((employee)=>{
+    return employee.salary < 5000;
+});
+console.log(lessSalary);
+
+// T-029: Find the first employee who earns exactly 5100. 💛💛💛
+
+const exactSalary = employees.find((employee)=>{
+    return employee.salary === 5100;
+});
+console.log(exactSalary);
+
+// T-030: Find the last employee in the "HR" department. 💛💛💛
+
+const lastHrEmployee = employees.filter((employee)=>{
+    const dep = departments.find((dept)=> dept.name === 'HR').id;
+    return employee.departmentId === dep;
+});
+console.log(lastHrEmployee[lastHrEmployee.length - 1]);
+
+
+// T-031: Find the first employee in the "Marketing" department. 💛💛💛
+
+const firstMarketingEmp = employees.filter((employee)=>{
+    const dep = departments.find((dept)=> dept.name === 'Marketing').id;
+    return employee.departmentId === dep;
+});
+console.log(firstMarketingEmp[0]);
+
+//  T-032: Check if all employees earn more than 4000.💛💛💛
+
+const earnMore = employees.every((employee)=>{
+    return employee.salary > 4000;
+});
+console.log(earnMore);
+
+//  T-033: Find the first employee in the "Sales" department. 💛💛💛
+
+const firstSales = employees.filter((employee)=>{
+    const dep = departments.find(dep => dep.name === 'Sales').id;
+    return employee.departmentId === dep;
+});
+console.log(firstSales[0]);
+
+// T-034: Verify if all employees belong to a department listed in the departments array. 💛💛💛
+
+const verifyEmp = employees.every((employee)=>{
+    const dep = departments.map(dep => dep.id);
+    return dep.includes(employee.departmentId);
+});
+console.log(verifyEmp);
+
+// T-035: Log each employee's name and department name to the console. 💛💛💛
+ // 🛑🛑🛑🛑🛑
+
+ // T-036: Extract all employee names into a single array. 💛💛💛
+
+ const extractAllEmployee = employees.map((employee)=>{
+    return employee.name;
+ });
+ console.log(extractAllEmployee);
+
+ // T-037: Increment each employee's salary by 10% 💛💛💛
