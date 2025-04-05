@@ -285,7 +285,70 @@ console.log(incrementSalary);
 
 // T-038: Assume each employee can have multiple skills. Create an array of employee skills and flatten them. Example: [{name: "Alice", skills: ["Excel", "Management"]}, ...]. 💛💛💛
 
-const multipleSkill = employees.map((employee)=>{
-    return employee.skills = ['Excel']
+const employees1 = [
+    { id: 1, name: "Alice", departmentId: 1, salary: 5000, skills: ["Excel", "Management"] },
+    { id: 2, name: "Bob", departmentId: 2, salary: 7000, skills: ["JavaScript", "React"] },
+    { id: 3, name: "Charlie", departmentId: 3, salary: 4500, skills: ["Python", "Data Analysis"] },
+    { id: 4, name: "Diana", departmentId: 1, salary: 5500, skills: ["Management", "Communication"] },
+    { id: 5, name: "Edward", departmentId: 2, salary: 8000, skills: ["Node.js", "AWS"] },
+    { id: 6, name: "Fiona", departmentId: 4, salary: 6000, skills: ["Java", "Spring"] },
+    { id: 7, name: "George", departmentId: 3, salary: 5200, skills: ["SQL", "Database"] },
+    { id: 8, name: "Helen", departmentId: 4, salary: 7200, skills: ["Angular", "TypeScript"] },
+    { id: 9, name: "Ian", departmentId: 2, salary: 4800, skills: ["HTML", "CSS"] },
+    { id: 10, name: "Jane", departmentId: 1, salary: 5100, skills: ["Project Management", "Agile"] },
+  ];
+
+const multipleSkill = employees1.flatMap((employee)=>{
+    return employee.skills;
 });
 console.log(multipleSkill);
+
+// T-039: Find the total salary of all employees working in the "Engineering" department. 💛💛💛
+
+const engDep = departments.find(dep => dep.name === 'Engineering').id;
+const engineeringEmployees = employees.filter((employee)=>{
+   return employee.departmentId === engDep;
+});
+const totalEngSalary = engineeringEmployees.reduce((acc, curr)=>{
+    return acc + curr.salary;
+}, 0);
+console.log(totalEngSalary);
+
+// T-040: Check if there is any department where all employees earn more than 5000. 💛💛💛
+
+const allDepartment = employees.filter((employee)=> employee.salary > 5000);
+console.log(allDepartment);
+
+//  T-041: Assume each employee has a projects array (e.g., { id: 1, name: "Alice", projects: ["Project A", "Project B"] }). Find the total number of unique projects being handled across all employees. 💛💛💛
+
+const employees2 = [
+    { id: 1, name: "Alice", projects: ["Project A", "Project B"] },
+    { id: 2, name: "Bob", projects: ["Project B", "Project C"] },
+    { id: 3, name: "Charlie", projects: ["Project A", "Project D"] },
+    { id: 4, name: "Diana", projects: ["Project C"] },
+    { id: 5, name: "Edward", projects: ["Project E", "Project F"] },
+  ];
+
+  const projectArr = employees2.flatMap(employee => employee.projects);
+  const uniqueProjects = [...new Set(projectArr)];
+  console.log(uniqueProjects.length);
+
+  // T-042: For each employee, find their department name and return an array of employee names with their department names. 💛💛💛
+
+  const depInfo = departments.reduce((acc, curr)=>{
+    acc[curr.id] = curr.name;
+    return acc;
+  }, {});
+  console.log(depInfo);
+
+  const employeesWithDep = employees.map(employee => ({
+    name: employee.name,
+    department: depInfo[employee.departmentId]
+  }))
+  console.log(employeesWithDep);
+
+  // T-043: Get a list of names of employees earning more than 6000. 💛💛💛
+
+  const earnMore6000 = employees.filter(employee => employee.salary > 6000)
+                                .map(employee => employee.name)
+  console.log(earnMore6000);
