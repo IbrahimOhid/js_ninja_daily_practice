@@ -352,3 +352,23 @@ const employees2 = [
   const earnMore6000 = employees.filter(employee => employee.salary > 6000)
                                 .map(employee => employee.name)
   console.log(earnMore6000);
+
+  //  T-044: Write a for-of loop to print the names of all employees from the employees array. 💛💛💛
+
+  for(const allEmp of employees){
+    console.log(allEmp.name);
+  }
+
+  // T-045: Using a for-of loop, print the names of employees earning more than 5000. 💛💛💛
+
+  for(const allEmp of employees){
+    if(allEmp.salary > 5000){
+        console.log(allEmp.name);
+    }
+  }
+
+  // T-046: Modify the for-of loop to destructure each employee object and log their name and salary. 💛💛💛
+
+for(const {name, salary} of employees){
+    console.log(`${name} : ${salary}`);
+}
