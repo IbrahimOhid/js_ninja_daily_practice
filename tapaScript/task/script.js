@@ -296,9 +296,9 @@ const employees1 = [
     { id: 8, name: "Helen", departmentId: 4, salary: 7200, skills: ["Angular", "TypeScript"] },
     { id: 9, name: "Ian", departmentId: 2, salary: 4800, skills: ["HTML", "CSS"] },
     { id: 10, name: "Jane", departmentId: 1, salary: 5100, skills: ["Project Management", "Agile"] },
-  ];
+];
 
-const multipleSkill = employees1.flatMap((employee)=>{
+const multipleSkill = employees1.flatMap((employee) => {
     return employee.skills;
 });
 console.log(multipleSkill);
@@ -306,17 +306,17 @@ console.log(multipleSkill);
 // T-039: Find the total salary of all employees working in the "Engineering" department. 💛💛💛
 
 const engDep = departments.find(dep => dep.name === 'Engineering').id;
-const engineeringEmployees = employees.filter((employee)=>{
-   return employee.departmentId === engDep;
+const engineeringEmployees = employees.filter((employee) => {
+    return employee.departmentId === engDep;
 });
-const totalEngSalary = engineeringEmployees.reduce((acc, curr)=>{
+const totalEngSalary = engineeringEmployees.reduce((acc, curr) => {
     return acc + curr.salary;
 }, 0);
 console.log(totalEngSalary);
 
 // T-040: Check if there is any department where all employees earn more than 5000. 💛💛💛
 
-const allDepartment = employees.filter((employee)=> employee.salary > 5000);
+const allDepartment = employees.filter((employee) => employee.salary > 5000);
 console.log(allDepartment);
 
 //  T-041: Assume each employee has a projects array (e.g., { id: 1, name: "Alice", projects: ["Project A", "Project B"] }). Find the total number of unique projects being handled across all employees. 💛💛💛
@@ -327,48 +327,79 @@ const employees2 = [
     { id: 3, name: "Charlie", projects: ["Project A", "Project D"] },
     { id: 4, name: "Diana", projects: ["Project C"] },
     { id: 5, name: "Edward", projects: ["Project E", "Project F"] },
-  ];
+];
 
-  const projectArr = employees2.flatMap(employee => employee.projects);
-  const uniqueProjects = [...new Set(projectArr)];
-  console.log(uniqueProjects.length);
+const projectArr = employees2.flatMap(employee => employee.projects);
+const uniqueProjects = [...new Set(projectArr)];
+console.log(uniqueProjects.length);
 
-  // T-042: For each employee, find their department name and return an array of employee names with their department names. 💛💛💛
+// T-042: For each employee, find their department name and return an array of employee names with their department names. 💛💛💛
 
-  const depInfo = departments.reduce((acc, curr)=>{
+const depInfo = departments.reduce((acc, curr) => {
     acc[curr.id] = curr.name;
     return acc;
-  }, {});
-  console.log(depInfo);
+}, {});
+console.log(depInfo);
 
-  const employeesWithDep = employees.map(employee => ({
+const employeesWithDep = employees.map(employee => ({
     name: employee.name,
     department: depInfo[employee.departmentId]
-  }))
-  console.log(employeesWithDep);
+}))
+console.log(employeesWithDep);
 
-  // T-043: Get a list of names of employees earning more than 6000. 💛💛💛
+// T-043: Get a list of names of employees earning more than 6000. 💛💛💛
 
-  const earnMore6000 = employees.filter(employee => employee.salary > 6000)
-                                .map(employee => employee.name)
-  console.log(earnMore6000);
+const earnMore6000 = employees.filter(employee => employee.salary > 6000)
+    .map(employee => employee.name)
+console.log(earnMore6000);
 
-  //  T-044: Write a for-of loop to print the names of all employees from the employees array. 💛💛💛
+//  T-044: Write a for-of loop to print the names of all employees from the employees array. 💛💛💛
 
-  for(const allEmp of employees){
+for (const allEmp of employees) {
     console.log(allEmp.name);
-  }
+}
 
-  // T-045: Using a for-of loop, print the names of employees earning more than 5000. 💛💛💛
+// T-045: Using a for-of loop, print the names of employees earning more than 5000. 💛💛💛
 
-  for(const allEmp of employees){
-    if(allEmp.salary > 5000){
+for (const allEmp of employees) {
+    if (allEmp.salary > 5000) {
         console.log(allEmp.name);
     }
-  }
+}
 
-  // T-046: Modify the for-of loop to destructure each employee object and log their name and salary. 💛💛💛
+// T-046: Modify the for-of loop to destructure each employee object and log their name and salary. 💛💛💛
 
-for(const {name, salary} of employees){
+for (const { name, salary } of employees) {
     console.log(`${name} : ${salary}`);
 }
+
+//T-047: Write a for-of loop to match employees with their departments and print the results.💛💛💛
+
+for(const employee of employees){
+    const departmentId = departments.find(dep => dep.id === employee.departmentId);
+    console.log(`Name: ${employee.name} - Department: ${departmentId.name} & Salary: ${employee.salary}`);
+}
+
+//  T-048: Use Array.prototype.entries() with a for-of loop to print the index and name of each employee. 💛💛💛
+
+for(const [index, employee] of employees.entries()){
+    console.log(`Index: ${index} Name: ${employee.name}`);
+}
+
+//  T-049: Given the array-like object below, access the second element and log it: 💛💛💛
+
+const arrayLike = { 0: "First", 1: "Second", length: 2 };
+console.log(arrayLike[1]);
+// Alternative (Convert to a Real Array): ⤵
+const realArray = Array.from(arrayLike);
+console.log(realArray[1]);
+
+// T-050: Write a function that takes a variable number of arguments and converts the arguments object into a real array using Array.from. 💛💛💛
+
+function convertArray(arr){
+    const realArray = Array.from(arr);
+    return realArray;
+}
+
+const result = convertArray(1, false, 22, 'one', 3, true, 'rahim', {name: 'karim', age: 27});
+console.log(result);
