@@ -42,3 +42,15 @@ console.log(userIndex);
 const allNum = [1, 2, 3, 4, 5, 6];
 const filterResult = allNum.filter(num => num > 2);
 console.log(filterResult);
+
+// slice 
+
+const numb = [1, 2, 3, 4, 5];
+const sliceResult = numb.slice(1, 3);
+console.log(sliceResult);
+
+// splice
+
+const spliceArr = [1, 2, 3, 4, 5, 6, 7, 8];
+const spliceResult = spliceArr.splice(2, 3, 1, 2, 3);
+console.log(spliceArr);
