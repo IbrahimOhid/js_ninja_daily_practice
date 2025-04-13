@@ -29,3 +29,16 @@ const numbers = [1, 2, 3, 4, 11, 20, 38];
 
 const results = numbers.find(num => num > 4);
 console.log(results);
+
+
+// findIndex
+
+const userName = ['rahim', 'karim', 'mohammad', 'aziz', 'kolim'];
+const userIndex = userName.findIndex(user => user === 'kolim');
+console.log(userIndex);
+
+// filter
+
+const allNum = [1, 2, 3, 4, 5, 6];
+const filterResult = allNum.filter(num => num > 2);
+console.log(filterResult);
