@@ -54,3 +54,19 @@ console.log(sliceResult);
 const spliceArr = [1, 2, 3, 4, 5, 6, 7, 8];
 const spliceResult = spliceArr.splice(2, 3, 1, 2, 3);
 console.log(spliceArr);
+
+// map
+
+const mapNum = [2, 3, 4, 5, 10];
+
+const mapResult = mapNum.map(num => num * 2);
+console.log(mapResult);
+
+// reduce
+
+const reduceNum = [1, 2, 3, 4, 5];
+const reduceResult = reduceNum.reduce((acc, curr)=>{
+  return  acc + curr;
+  
+});
+console.log(reduceResult);
