@@ -1,6 +1,6 @@
 // ES6 fat Arrow Function 💛💛💛
 
-function number(){
+function number() {
     return 10;
 }
 console.log(number());
@@ -65,8 +65,123 @@ console.log(mapResult);
 // reduce
 
 const reduceNum = [1, 2, 3, 4, 5];
-const reduceResult = reduceNum.reduce((acc, curr)=>{
-  return  acc + curr;
-  
+const reduceResult = reduceNum.reduce((acc, curr) => {
+    return acc + curr;
+
 });
 console.log(reduceResult);
+
+// for in use only Object
+
+const userDetails = {
+    name: 'ibrahim',
+    age: 28,
+    isSkilled: true
+}
+
+for (property in userDetails) {
+    console.log(property);
+}
+
+// function default parameter
+
+function defaultNum(x = 10) {
+    return x;
+}
+console.log(defaultNum());
+
+// spread operator
+
+const spreadNum = [1, 2, 3];
+
+const resultSpread = [...spreadNum, 4, 5, 6];
+console.log(resultSpread);
+
+const a = [...spreadNum]; // exact array copy 
+const resultA = a.push(4)
+console.log(a);
+console.log(spreadNum)
+
+const num1 = [1, 2, 3];
+const num2 = [4, 5, 6];
+console.log(...num1, ...num2)
+
+const allUserName = ['rahim', 'karim',];
+const allName = ['Ibrahim', ...allUserName, 'mohammad'];
+console.log(allName)
+
+// object spread operator
+
+var myObj1 = {
+    x: 1,
+    y: 2
+}
+
+var myObj2 = {
+    a: 1,
+    b: 2
+}
+console.log({ ...myObj1, ...myObj2 });
+
+// rest parameter
+
+function newNum(a, b, ...num) {
+    console.log(a)
+    console.log(b)
+    console.log(num)
+}
+
+newNum(1, 2, 3, 4, 5)
+
+// Destructuring
+
+// object Destructuring 
+
+const userDetail = {
+    name: 'ibrahim',
+    ages: 28,
+    isSkilled: true
+}
+
+const { ages, name: title } = userDetail;
+console.log(ages, title);
+
+const university = {
+    name: 'UCTC',
+    education: {
+        degree: 'Bsc in Mechanical Engineering',
+        year: 2024,
+        subject: {
+            sub: 'ME'
+        }
+    }
+}
+
+const { education: { subject: sub } } = university;
+console.log(sub);
+
+
+// array Destructuring 
+
+const arrayDe = [1, 2, 3, 4, 5];
+
+const [e, f, ...nums] = arrayDe;
+console.log(nums);
+
+
+const [, g,,, h] = arrayDe;
+console.log(h);
+
+const arrDes = [1, 2, 3, [4, 500, 200, 100], 4, 5, 6];
+
+const [,,,[,p,,q],,r] = arrDes;
+console.log(r);
+console.log(p);
+console.log(q);
+
+var u = 1
+var v = 2
+
+var [u, v] = [v, u];
+console.log(u);
+console.log(v);
