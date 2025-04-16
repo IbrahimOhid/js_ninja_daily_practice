@@ -1,7 +1,9 @@
-const divElm = document.createElement(('div'), 'heo');
-divElm.className = 'redText'
-divElm.setAttribute('id', 'red');
+/*
+* Title: To Do Application Using JS DOM
+*/
+
+// select Element
 
 
-const todoList = document.querySelector('.todo-list');
-todoList.appendChild(divElm)
+
+// functions

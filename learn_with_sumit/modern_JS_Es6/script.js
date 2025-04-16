@@ -185,3 +185,11 @@ var v = 2
 var [u, v] = [v, u];
 console.log(u);
 console.log(v);
+
+
+// template literals
+
+const pi = 3.14;
+const myAge = 28;
+
+console.log(`This is ${pi}. My Age is ${myAge}`);

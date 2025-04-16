@@ -295,5 +295,13 @@ const result = numbers.filter((number)=> number > 5);
 console.log(result);
 
 const userInfo = [
-  {name:'ibrahim', age: 26, profession}
+  {name:'ibrahim', age: 26, profession:'designer'},
+  {name:'ohid', age: 22, profession:'engineer'},
+  {name:'ebne', age: 20, profession:'student'},
+  {name:'rafiya', age: 28, profession:'student'},
+  {name:'kawser', age: 23, profession:'engineer'},
 ]
+const  finalUser = userInfo.filter((user)=>{
+ return user.profession == 'engineer'
+})
+console.log(finalUser);
