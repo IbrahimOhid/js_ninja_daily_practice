@@ -23,7 +23,7 @@ const age = 3;
 const result = (age >= 18) ? 'Adult' : 'Child';
 console.log(result);
 
-// Array Find
+// Array Find 💛💛💛
 
 const numbers = [1, 2, 3, 4, 11, 20, 38];
 
@@ -31,38 +31,38 @@ const results = numbers.find(num => num > 4);
 console.log(results);
 
 
-// findIndex
+// findIndex 💛💛💛
 
 const userName = ['rahim', 'karim', 'mohammad', 'aziz', 'kolim'];
 const userIndex = userName.findIndex(user => user === 'kolim');
 console.log(userIndex);
 
-// filter
+// filter 💛💛💛
 
 const allNum = [1, 2, 3, 4, 5, 6];
 const filterResult = allNum.filter(num => num > 2);
 console.log(filterResult);
 
-// slice 
+// slice 💛💛💛
 
 const numb = [1, 2, 3, 4, 5];
 const sliceResult = numb.slice(1, 3);
 console.log(sliceResult);
 
-// splice
+// splice 💛💛💛
 
 const spliceArr = [1, 2, 3, 4, 5, 6, 7, 8];
 const spliceResult = spliceArr.splice(2, 3, 1, 2, 3);
 console.log(spliceArr);
 
-// map
+// map 💛💛💛
 
 const mapNum = [2, 3, 4, 5, 10];
 
 const mapResult = mapNum.map(num => num * 2);
 console.log(mapResult);
 
-// reduce
+// reduce 💛💛💛
 
 const reduceNum = [1, 2, 3, 4, 5];
 const reduceResult = reduceNum.reduce((acc, curr) => {
@@ -71,7 +71,7 @@ const reduceResult = reduceNum.reduce((acc, curr) => {
 });
 console.log(reduceResult);
 
-// for in use only Object
+// for in use only Object 💛💛💛
 
 const userDetails = {
     name: 'ibrahim',
@@ -83,14 +83,14 @@ for (property in userDetails) {
     console.log(property);
 }
 
-// function default parameter
+// function default parameter 💛💛💛
 
 function defaultNum(x = 10) {
     return x;
 }
 console.log(defaultNum());
 
-// spread operator
+// spread operator 💛💛💛
 
 const spreadNum = [1, 2, 3];
 
@@ -110,7 +110,7 @@ const allUserName = ['rahim', 'karim',];
 const allName = ['Ibrahim', ...allUserName, 'mohammad'];
 console.log(allName)
 
-// object spread operator
+// object spread operator 💛💛💛
 
 var myObj1 = {
     x: 1,
@@ -123,7 +123,7 @@ var myObj2 = {
 }
 console.log({ ...myObj1, ...myObj2 });
 
-// rest parameter
+// rest parameter 💛💛💛
 
 function newNum(a, b, ...num) {
     console.log(a)
@@ -133,7 +133,7 @@ function newNum(a, b, ...num) {
 
 newNum(1, 2, 3, 4, 5)
 
-// Destructuring
+// Destructuring 💛💛💛
 
 // object Destructuring 
 
@@ -161,7 +161,7 @@ const { education: { subject: sub } } = university;
 console.log(sub);
 
 
-// array Destructuring 
+// array Destructuring 💛💛💛
 
 const arrayDe = [1, 2, 3, 4, 5];
 
@@ -187,9 +187,44 @@ console.log(u);
 console.log(v);
 
 
-// template literals
+// template literals 💛💛💛
 
 const pi = 3.14;
 const myAge = 28;
 
 console.log(`This is ${pi}. My Age is ${myAge}`);
+
+// to Reversed 💛💛💛
+
+const newNumber = [1, 2, 3, 4, 5, 6];
+const newNumResult = newNumber.toReversed();
+console.log(newNumResult);
+console.log(newNumber);
+
+// to Spliced 💛💛💛
+
+const spliceArray = [1, 2, 3, 4, 5, 6];
+const resultSplice = spliceArray.toSpliced(2, 2, 300, 800);
+console.log(resultSplice);
+console.log(spliceArray);
+
+// with
+
+const arr = [1, 2, 3, 4, 5];
+const arrWith = arr.with(1, 300);
+console.log(arrWith);
+console.log(arr);
+
+// sort 
+
+const arrNum = [10, 23, 30, 1, 2, 5, 88, 99];
+
+const compare = function(a, b){
+    return a - b;
+}
+
+const resultArrNum = arrNum.sort(compare);
+console.log(resultArrNum);
+
+
+
