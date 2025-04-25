@@ -1,3 +1,5 @@
+// MODERN JAVASCRIPT ES6
+
 // ES6 fat Arrow Function 💛💛💛
 
 function number() {
