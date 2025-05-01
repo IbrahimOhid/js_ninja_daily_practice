@@ -28,3 +28,21 @@ const captain = {
 }
 const newPlayer = Object.create(captain);
 console.log(newPlayer.name);
+
+// constructor 
+
+class Person{
+    constructor(name, age){
+        this.name
+        this.age
+    }
+        eat(){
+            console.log('Eating')
+        }
+        play(){
+            console.log('playing');
+        }
+}
+
+const ibrahim = new Person('Ibrahim', 27);
+ibrahim.play()
